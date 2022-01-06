@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <body bgcolor="#FFEFD5"onload="start()">
+    <style type="text/css">
+#clock{
+    color:#00000F;
+    font-size:40px;
+    text-align:top;
+    background-color: #F0F8FF;
+    margin:28px 65px;
+    width:157px;
+    border:25px outset 
+#E7F219;
+    text-shadow: 3px 1px 2px 
+#20B2AA;
+}
+
+h1 {
+    font-family:courier;
+    font-size:50px;
+    margin:10px;
+    text-shadow: 3px 1px 2px 
+#7CFC00;
+}
+#date1{
+    color:#00000F;
+    font-size:45px;
+    background-color: #FFFFFD;
+    margin:150px 42px;
+    position:absolute;
+    top:130px;
+    width:225px;
+    border:25px outset 
+#FCDCDF;
+    text-shadow: 1px 1px 1px 
+#DC143C;
+}
+
+h2 {
+    font-family:courier;
+    font-size:50px;
+    margin:180px;
+    text-shadow: 1px 1px 1px 
+#FF1493;
+    
+}
+    </style>
+    <hr><div id="clock"></div>
+    <marquee behavior="alternate" scrollamout="10" direction="left"><h1>CLOCK</h1></marquee></hr>
+    <hr><div id="date1"></div>
+    <marquee behavior="alternate" scrollamout="10" from="0" to="10" direction="left"><h2>DATE</h2></marquee></hr>
+    <script type="text/javascript">
+       
+function start() 
+{
+    
+var today = new Date();
+    
+var h = today.getHours();
+    
+var m = today.getMinutes();
+    
+var s = today.getSeconds();
+    
+var d = today.getDate();
+    
+var n = today.getMonth()+1;
+    
+var y = today.getFullYear();
+    
+m = correctTime(m);
+    
+s = correctTime(s);
+    
+d = correctDate(d);
+    
+n = correctDate(n);
+
+   document.getElementById('clock').innerHTML = h + ":" + m + ":" + s;
+
+    
+var t = setTimeout(start, 1000);
+    document.getElementById('date1').innerHTML = d + ":" + n + ":" + y;
+
+   
+var b = new Date();  
+}
+
+function correctTime(g) 
+{
+    
+if (g < 10) {
+        g = "0" + g;
+    }
+    return g;
+}
+
+
+function correctDate(i) 
+{
+    
+if (i < 10) {
+        
+i = "0" + i;
+    }
+    
+return i;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+        
+    </script>
+</body>
+</html>
